@@ -1,11 +1,14 @@
-const Buttonmoins = (props) => {
-    <button
-        onClick={() => {
-            props.setCounter(props.counter - 1);
-        }}
-    >
-        Decrement
-    </button>;
+const Buttonmoins = ({ counter, setCounter }) => {
+    return (
+        <button
+            onClick={() => {
+                setCounter(counter - 1);
+            }}
+            style={{ visibility: counter !== 0 ? "visible" : "hidden" }}
+        >
+            Decrement
+        </button>
+    );
 };
 
 export default Buttonmoins;
